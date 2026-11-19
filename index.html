@@ -4,253 +4,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#172B35">
-  <title>Cercle du Savoir | SVT UOB</title>
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f7f6;
-      color: #24343b;
-    }
-
-    header {
-      background: #172b35;
-      color: white;
-      padding: 28px 20px;
-      text-align: center;
-    }
-
-    .logo {
-      font-size: 38px;
-      margin-bottom: 12px;
-    }
-
-    header h1 {
-      font-size: 25px;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      color: #d2dfdc;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-
-    .hero {
-      padding: 45px 20px;
-      text-align: center;
-    }
-
-    .hero h2 {
-      font-size: 27px;
-      margin-bottom: 15px;
-      color: #172b35;
-    }
-
-    .hero p {
-      color: #63747a;
-      line-height: 1.6;
-      max-width: 550px;
-      margin: auto;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 15px 20px 45px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin: 20px 0 25px;
-    }
-
-    .section-title h2 {
-      font-size: 23px;
-      color: #172b35;
-    }
-
-    .section-title p {
-      color: #718087;
-      margin-top: 8px;
-      font-size: 14px;
-    }
-
-    .level {
-      margin-bottom: 30px;
-    }
-
-    .level h3 {
-      margin-bottom: 15px;
-      color: #315d57;
-      font-size: 19px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 14px;
-    }
-
-    .card {
-      background: white;
-      padding: 22px;
-      border-radius: 14px;
-      border: 1px solid #e2e9e6;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
-      text-align: center;
-    }
-
-    .card .icon {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .card h4 {
-      font-size: 18px;
-      margin-bottom: 9px;
-    }
-
-    .card p {
-      color: #718087;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .info {
-      background: #e5efeb;
-      padding: 25px;
-      border-radius: 14px;
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .info h3 {
-      margin-bottom: 10px;
-      color: #244b43;
-    }
-
-    .info p {
-      color: #526b65;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    footer {
-      background: #172b35;
-      color: #d2dfdc;
-      padding: 25px 15px;
-      text-align: center;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-  </style>
+  <meta name="theme-color" content="#123b35">
+  <meta name="description" content="Cercle du Savoir – Bibliothèque collaborative des étudiants en SVT de l'Université Omar Bongo.">
+  <title>Cercle du Savoir – SVT UOB</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <header>
-    <div class="logo">🎓</div>
-    <h1>CERCLE DU SAVOIR</h1>
-    <p>SVT · UNIVERSITÉ OMAR BONGO</p>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Accueil Cercle du Savoir">
+      <span class="brand-mark">CS</span>
+      <span><strong>Cercle du Savoir</strong><small>SVT · Université Omar Bongo</small></span>
+    </a>
+    <nav>
+      <a href="#espaces">Les espaces</a>
+      <a href="#ressources">Ressources</a>
+      <a href="#apropos">À propos</a>
+    </nav>
+    <button class="outline-btn" id="adminToggle" type="button">Espace gestion</button>
   </header>
 
-  <section class="hero">
-    <h2>Bienvenue dans votre espace de savoir !</h2>
-    <p>
-      Une bibliothèque universitaire collaborative
-      dédiée aux étudiants en Sciences de la Vie et de la Terre.
-      Apprenons, partageons et réussissons ensemble.
-    </p>
-  </section>
-
-  <main class="container">
-
-    <div class="section-title">
-      <h2>Explorez vos cours</h2>
-      <p>Choisissez votre niveau et votre parcours.</p>
-    </div>
-
-    <section class="level">
-      <h3>📘 Licence 1</h3>
-      <div class="cards">
-        <div class="card">
-          <div class="icon">🌱</div>
-          <h4>Tronc commun</h4>
-          <p>Retrouvez les matières communes de première année.</p>
-        </div>
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">BIBLIOTHÈQUE UNIVERSITAIRE COLLABORATIVE</span>
+        <h1>Apprendre, partager<br><em>et réussir ensemble.</em></h1>
+        <p>Retrouve les cours, TD, TP, anciens sujets et fiches de révision des différentes filières de SVT à l'UOB.</p>
+        <a class="primary-btn" href="#espaces">Explorer les espaces <span>↗</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="book-stack"><span>SVT</span><i></i><i></i><i></i></div>
+        <span class="art-leaf leaf-one">✳</span><span class="art-leaf leaf-two">✦</span>
+        <span class="art-caption">Le savoir<br>se partage.</span>
       </div>
     </section>
 
-    <section class="level">
-      <h3>📗 Licence 2</h3>
-      <div class="cards">
-        <div class="card">
-          <div class="icon">🧬</div>
-          <h4>STA</h4>
-          <p>Sciences et techniques appliquées.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🔬</div>
-          <h4>STE</h4>
-          <p>Sciences et techniques de l'environnement.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🌍</div>
-          <h4>Géologie</h4>
-          <p>Ressources pédagogiques en géologie.</p>
-        </div>
+    <section class="search-section" id="ressources">
+      <div><span class="eyebrow">TOUT AU MÊME ENDROIT</span><h2>Que recherches-tu ?</h2></div>
+      <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher un cours, une matière, un document..."><kbd>⌘ K</kbd></label>
+      <div class="filter-row">
+        <select id="levelFilter" aria-label="Filtrer par niveau"><option value="">Tous les niveaux</option><option>L1</option><option>L2</option><option>L3</option></select>
+        <select id="trackFilter" aria-label="Filtrer par filière"><option value="">Toutes les filières</option><option value="Tronc commun">Tronc commun</option><option value="STA">STA</option><option value="STE">STE</option><option value="GAE">GAE</option></select>
+        <select id="categoryFilter" aria-label="Filtrer par catégorie"><option value="">Toutes les catégories</option><option>Cours</option><option>TD</option><option>TP</option><option>Anciens sujets d'examen</option><option>Corrigés</option><option>Fiches de révision</option><option>Autres ressources</option></select>
       </div>
     </section>
 
-    <section class="level">
-      <h3>📕 Licence 3</h3>
-      <div class="cards">
-        <div class="card">
-          <div class="icon">🧬</div>
-          <h4>STA</h4>
-          <p>Ressources de troisième année en STA.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🔬</div>
-          <h4>STE</h4>
-          <p>Ressources de troisième année en STE.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon">🌍</div>
-          <h4>Géologie</h4>
-          <p>Ressources de troisième année en géologie.</p>
-        </div>
-      </div>
+    <section class="spaces-section" id="espaces">
+      <div class="section-heading"><div><span class="eyebrow">PARCOURS UNIVERSITAIRE</span><h2>Choisis ton espace</h2></div><p>Chaque niveau possède ses propres matières et ressources.</p></div>
+      <div id="spacesGrid" class="spaces-grid"></div>
     </section>
 
-    <section class="info">
-      <h3>🤝 Le savoir se partage</h3>
-      <p>
-        Partageons nos cours, nos exercices et nos connaissances
-        pour faciliter la réussite de tous les étudiants.
-      </p>
+    <section class="latest-section">
+      <div class="section-heading"><div><span class="eyebrow">MIS À DISPOSITION</span><h2>Ressources récentes</h2></div><span class="soft-pill" id="resourceCount">0 ressource</span></div>
+      <div id="latestList" class="latest-list"><div class="empty-state">Les ressources ajoutées apparaîtront ici.</div></div>
     </section>
 
+    <section class="about-section" id="apropos">
+      <div class="about-icon">✳</div><div><span class="eyebrow">L'ESPRIT DU PROJET</span><h2>Le savoir grandit quand on le partage.</h2><p>Cercle du Savoir est une initiative étudiante destinée à faciliter l'accès aux ressources pédagogiques et l'entraide entre étudiants en SVT de l'Université Omar Bongo.</p><small>Une initiative étudiante — Créé par Emeraude</small></div>
+    </section>
   </main>
 
-  <footer>
-    <strong>CERCLE DU SAVOIR – SVT UOB</strong><br>
-    Le savoir se partage, la réussite se construit ensemble.<br>
-    © 2026 · Projet étudiant
-  </footer>
+  <footer><span>© <span id="year"></span> Cercle du Savoir · SVT UOB</span><span>Partager · Apprendre · Progresser</span></footer>
 
+  <dialog id="spaceDialog" class="modal">
+    <div class="modal-head"><div><span class="eyebrow" id="spaceEyebrow">ESPACE</span><h2 id="spaceTitle">Matières</h2></div><button class="icon-btn" data-close="spaceDialog" aria-label="Fermer">×</button></div>
+    <div class="semester-tabs" id="semesterTabs"></div>
+    <div class="modal-actions"><p id="spaceDescription">Sélectionne une matière pour consulter ses ressources.</p><button class="primary-btn small" id="createSubjectBtn">＋ Créer une nouvelle matière</button></div>
+    <div id="subjectsList" class="subjects-list"></div>
+  </dialog>
+
+  <dialog id="subjectDialog" class="modal narrow">
+    <div class="modal-head"><div><span class="eyebrow">NOUVELLE MATIÈRE</span><h2>Créer une matière</h2></div><button class="icon-btn" data-close="subjectDialog" aria-label="Fermer">×</button></div>
+    <form id="subjectForm" class="form">
+      <label>Nom de la matière *<input name="name" required maxlength="90" placeholder="Ex. Biologie cellulaire"></label>
+      <label>Code de la matière (facultatif)<input name="code" maxlength="25" placeholder="Ex. BIO101"></label>
+      <label>Semestre<select name="semester" id="subjectSemester" required></select></label>
+      <label>Description (facultatif)<textarea name="description" rows="3" placeholder="Quelques informations sur la matière..."></textarea></label>
+      <button class="primary-btn" type="submit">Enregistrer la matière</button>
+      <p class="form-note">Dans cette première version, les données sont enregistrées sur cet appareil uniquement.</p>
+    </form>
+  </dialog>
+
+  <dialog id="documentsDialog" class="modal">
+    <div class="modal-head"><div><span class="eyebrow" id="subjectContext">MATIÈRE</span><h2 id="documentsTitle">Ressources</h2></div><button class="icon-btn" data-close="documentsDialog" aria-label="Fermer">×</button></div>
+    <div class="upload-panel">
+      <div><strong>Ajouter une ressource</strong><p>PDF, DOC, DOCX, PPT, PPTX ou images · 15 Mo maximum</p></div>
+      <button class="primary-btn small" id="uploadBtn" type="button">＋ Ajouter un document</button>
+      <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png">
+    </div>
+    <div class="category-tabs" id="documentCategories"></div>
+    <div id="documentsList" class="documents-list"></div>
+  </dialog>
+
+  <dialog id="adminDialog" class="modal narrow">
+    <div class="modal-head"><div><span class="eyebrow">GESTION LOCALE</span><h2>Tableau de gestion</h2></div><button class="icon-btn" data-close="adminDialog" aria-label="Fermer">×</button></div>
+    <div class="admin-stats" id="adminStats"></div>
+    <p class="form-note">Ce tableau est une démonstration locale. Il ne constitue pas une authentification administrateur et ne protège pas les données. La gestion sécurisée sera activée avec Supabase.</p>
+    <button class="danger-btn" id="resetDemo" type="button">Réinitialiser les données de démonstration</button>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
 </body>
-            </html>
-            
+</html>
