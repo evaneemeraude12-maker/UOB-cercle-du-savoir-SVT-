@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#172B35">
+  <title>Cercle du Savoir | SVT UOB</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7f6;
+      color: #24343b;
+    }
+
+    header {
+      background: #172b35;
+      color: white;
+      padding: 28px 20px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    header h1 {
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      color: #d2dfdc;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 45px 20px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 27px;
+      margin-bottom: 15px;
+      color: #172b35;
+    }
+
+    .hero p {
+      color: #63747a;
+      line-height: 1.6;
+      max-width: 550px;
+      margin: auto;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 15px 20px 45px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 20px 0 25px;
+    }
+
+    .section-title h2 {
+      font-size: 23px;
+      color: #172b35;
+    }
+
+    .section-title p {
+      color: #718087;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    .level {
+      margin-bottom: 30px;
+    }
+
+    .level h3 {
+      margin-bottom: 15px;
+      color: #315d57;
+      font-size: 19px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: white;
+      padding: 22px;
+      border-radius: 14px;
+      border: 1px solid #e2e9e6;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.04);
+      text-align: center;
+    }
+
+    .card .icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .card h4 {
+      font-size: 18px;
+      margin-bottom: 9px;
+    }
+
+    .card p {
+      color: #718087;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .info {
+      background: #e5efeb;
+      padding: 25px;
+      border-radius: 14px;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .info h3 {
+      margin-bottom: 10px;
+      color: #244b43;
+    }
+
+    .info p {
+      color: #526b65;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #172b35;
+      color: #d2dfdc;
+      padding: 25px 15px;
+      text-align: center;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">🎓</div>
+    <h1>CERCLE DU SAVOIR</h1>
+    <p>SVT · UNIVERSITÉ OMAR BONGO</p>
+  </header>
+
+  <section class="hero">
+    <h2>Bienvenue dans votre espace de savoir !</h2>
+    <p>
+      Une bibliothèque universitaire collaborative
+      dédiée aux étudiants en Sciences de la Vie et de la Terre.
+      Apprenons, partageons et réussissons ensemble.
+    </p>
+  </section>
+
+  <main class="container">
+
+    <div class="section-title">
+      <h2>Explorez vos cours</h2>
+      <p>Choisissez votre niveau et votre parcours.</p>
+    </div>
+
+    <section class="level">
+      <h3>📘 Licence 1</h3>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🌱</div>
+          <h4>Tronc commun</h4>
+          <p>Retrouvez les matières communes de première année.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="level">
+      <h3>📗 Licence 2</h3>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🧬</div>
+          <h4>STA</h4>
+          <p>Sciences et techniques appliquées.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔬</div>
+          <h4>STE</h4>
+          <p>Sciences et techniques de l'environnement.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h4>Géologie</h4>
+          <p>Ressources pédagogiques en géologie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="level">
+      <h3>📕 Licence 3</h3>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">🧬</div>
+          <h4>STA</h4>
+          <p>Ressources de troisième année en STA.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔬</div>
+          <h4>STE</h4>
+          <p>Ressources de troisième année en STE.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h4>Géologie</h4>
+          <p>Ressources de troisième année en géologie.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info">
+      <h3>🤝 Le savoir se partage</h3>
+      <p>
+        Partageons nos cours, nos exercices et nos connaissances
+        pour faciliter la réussite de tous les étudiants.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>CERCLE DU SAVOIR – SVT UOB</strong><br>
+    Le savoir se partage, la réussite se construit ensemble.<br>
+    © 2026 · Projet étudiant
+  </footer>
+
+</body>
+            </html>
+            
