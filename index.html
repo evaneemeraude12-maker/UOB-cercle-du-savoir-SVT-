@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,7 +19,7 @@
       <a href="#ressources">Ressources</a>
       <a href="#apropos">À propos</a>
     </nav>
-    <button class="outline-btn" id="adminToggle" type="button">Espace gestion</button>
+    <button class="outline-btn" id="adminToggle" type="button">Connexion</button>
   </header>
 
   <main>
@@ -44,19 +43,19 @@
       <label class="searchbox"><span>⌕</span><input id="searchInput" type="search" placeholder="Rechercher un cours, une matière, un document..."><kbd>⌘ K</kbd></label>
       <div class="filter-row">
         <select id="levelFilter" aria-label="Filtrer par niveau"><option value="">Tous les niveaux</option><option>L1</option><option>L2</option><option>L3</option></select>
-        <select id="trackFilter" aria-label="Filtrer par filière"><option value="">Toutes les filières</option><option value="Tronc commun">Tronc commun</option><option value="STA">STA</option><option value="STE">STE</option><option value="GAE">GAE</option></select>
+        <select id="trackFilter" aria-label="Filtrer par filière"><option value="">Toutes les filières</option><option value="Tronc commun">Tronc commun</option><option value="STA">STA</option><option value="STE">STE</option><option value="Géologie">Géologie (GAE)</option></select>
         <select id="categoryFilter" aria-label="Filtrer par catégorie"><option value="">Toutes les catégories</option><option>Cours</option><option>TD</option><option>TP</option><option>Anciens sujets d'examen</option><option>Corrigés</option><option>Fiches de révision</option><option>Autres ressources</option></select>
       </div>
     </section>
 
     <section class="spaces-section" id="espaces">
       <div class="section-heading"><div><span class="eyebrow">PARCOURS UNIVERSITAIRE</span><h2>Choisis ton espace</h2></div><p>Chaque niveau possède ses propres matières et ressources.</p></div>
-      <div id="spacesGrid" class="spaces-grid"></div>
+      <div id="spacesGrid" class="spaces-grid"><div class="empty-state">Chargement des espaces…</div></div>
     </section>
 
     <section class="latest-section">
       <div class="section-heading"><div><span class="eyebrow">MIS À DISPOSITION</span><h2>Ressources récentes</h2></div><span class="soft-pill" id="resourceCount">0 ressource</span></div>
-      <div id="latestList" class="latest-list"><div class="empty-state">Les ressources ajoutées apparaîtront ici.</div></div>
+      <div id="latestList" class="latest-list"><div class="empty-state">Chargement des ressources…</div></div>
     </section>
 
     <section class="about-section" id="apropos">
@@ -69,7 +68,7 @@
   <dialog id="spaceDialog" class="modal">
     <div class="modal-head"><div><span class="eyebrow" id="spaceEyebrow">ESPACE</span><h2 id="spaceTitle">Matières</h2></div><button class="icon-btn" data-close="spaceDialog" aria-label="Fermer">×</button></div>
     <div class="semester-tabs" id="semesterTabs"></div>
-    <div class="modal-actions"><p id="spaceDescription">Sélectionne une matière pour consulter ses ressources.</p><button class="primary-btn small" id="createSubjectBtn">＋ Créer une nouvelle matière</button></div>
+    <div class="modal-actions"><p id="spaceDescription">Sélectionne une matière pour consulter ses ressources.</p><button class="primary-btn small" id="createSubjectBtn" type="button">＋ Créer une nouvelle matière</button></div>
     <div id="subjectsList" class="subjects-list"></div>
   </dialog>
 
@@ -81,29 +80,49 @@
       <label>Semestre<select name="semester" id="subjectSemester" required></select></label>
       <label>Description (facultatif)<textarea name="description" rows="3" placeholder="Quelques informations sur la matière..."></textarea></label>
       <button class="primary-btn" type="submit">Enregistrer la matière</button>
-      <p class="form-note">Dans cette première version, les données sont enregistrées sur cet appareil uniquement.</p>
+      <p class="form-note">La matière sera enregistrée dans la bibliothèque commune après connexion.</p>
     </form>
   </dialog>
 
   <dialog id="documentsDialog" class="modal">
     <div class="modal-head"><div><span class="eyebrow" id="subjectContext">MATIÈRE</span><h2 id="documentsTitle">Ressources</h2></div><button class="icon-btn" data-close="documentsDialog" aria-label="Fermer">×</button></div>
     <div class="upload-panel">
-      <div><strong>Ajouter une ressource</strong><p>PDF, DOC, DOCX, PPT, PPTX ou images · 15 Mo maximum</p></div>
+      <div><strong>Ajouter une ressource</strong><p>PDF uniquement · 20 Mo maximum</p></div>
       <button class="primary-btn small" id="uploadBtn" type="button">＋ Ajouter un document</button>
-      <input type="file" id="fileInput" hidden accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png">
+      <input type="file" id="fileInput" hidden accept=".pdf,application/pdf">
     </div>
     <div class="category-tabs" id="documentCategories"></div>
     <div id="documentsList" class="documents-list"></div>
   </dialog>
 
-  <dialog id="adminDialog" class="modal narrow">
-    <div class="modal-head"><div><span class="eyebrow">GESTION LOCALE</span><h2>Tableau de gestion</h2></div><button class="icon-btn" data-close="adminDialog" aria-label="Fermer">×</button></div>
-    <div class="admin-stats" id="adminStats"></div>
-    <p class="form-note">Ce tableau est une démonstration locale. Il ne constitue pas une authentification administrateur et ne protège pas les données. La gestion sécurisée sera activée avec Supabase.</p>
-    <button class="danger-btn" id="resetDemo" type="button">Réinitialiser les données de démonstration</button>
+  <dialog id="authDialog" class="modal narrow">
+    <div class="modal-head"><div><span class="eyebrow">ESPACE ÉTUDIANT</span><h2>Ton compte</h2></div><button class="icon-btn" data-close="authDialog" aria-label="Fermer">×</button></div>
+    <div id="signedInPanel" hidden>
+      <p id="accountInfo" class="form-note"></p>
+      <button class="danger-btn" id="signOutBtn" type="button">Se déconnecter</button>
+    </div>
+    <div id="signedOutPanel">
+      <form id="loginForm" class="form">
+        <strong>Se connecter</strong>
+        <label>Adresse e-mail<input name="email" type="email" required autocomplete="email"></label>
+        <label>Mot de passe<input name="password" type="password" required autocomplete="current-password"></label>
+        <button class="primary-btn" type="submit">Connexion</button>
+      </form>
+      <div class="divider" style="margin:20px 0"></div>
+      <form id="signupForm" class="form">
+        <strong>Créer un compte</strong>
+        <label>Nom complet<input name="full_name" required maxlength="100" autocomplete="name"></label>
+        <label>Numéro étudiant (facultatif)<input name="student_number" maxlength="50"></label>
+        <label>Adresse e-mail<input name="email" type="email" required autocomplete="email"></label>
+        <label>Mot de passe (6 caractères minimum)<input name="password" type="password" minlength="6" required autocomplete="new-password"></label>
+        <button class="primary-btn" type="submit">Créer mon compte</button>
+        <p class="form-note">Si la confirmation par e-mail est activée, valide le message reçu avant de te connecter.</p>
+      </form>
+    </div>
   </dialog>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js"></script>
 </body>
 </html>
